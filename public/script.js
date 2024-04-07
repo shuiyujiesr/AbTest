@@ -36,16 +36,16 @@ function displayImages() {
   }
 
   if (selectedImagePosition === '') {
-    image1.src = `public/images/${images[selectedImageIndex]}`;
+    image1.src = `./public/images/${images[selectedImageIndex]}`;
     image1Name.textContent = getImageName(images[selectedImageIndex]);
-    image2.src = `public/images/${images[selectedImageIndex + 1]}`;
+    image2.src = `./public/images/${images[selectedImageIndex + 1]}`;
     image2Name.textContent = getImageName(images[selectedImageIndex + 1]);
   } else if (selectedImagePosition === 'left') {
-    image2.src = `public/images/${images[selectedImageIndex + 1]}`;
+    image2.src = `./public/images/${images[selectedImageIndex + 1]}`;
     image2Name.textContent = getImageName(images[selectedImageIndex + 1]);
     selectedImagePath = image1.src; // Update the path of the selected image
   } else if (selectedImagePosition === 'right') {
-    image1.src = `public/images/${images[selectedImageIndex + 1]}`;
+    image1.src = `./public/images/${images[selectedImageIndex + 1]}`;
     image1Name.textContent = getImageName(images[selectedImageIndex + 1]);
     selectedImagePath = image2.src; // Update the path of the selected image
   }
