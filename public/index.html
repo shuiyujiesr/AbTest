@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Image A/B Testing</title>
+  <link rel="stylesheet" type="text/css" href="styles.css">
+</head>
+<body>
+  <div class="container">
+    <div id="name-input-container" class="name-input-container">
+      <h1>Welcome to the Image A/B Test</h1>
+      <input type="text" id="name-input" placeholder="Enter your name">
+      <button id="start-button">Start</button>
+    </div>
+    <div id="test-container" class="test-container" style="display: none;">
+      <div class="header">
+        <h1 id="title">Click on the image that you find less intimidating and feel confident you can complete.</h1>
+        <h2 id="countdown">Images left: </h2>
+      </div>
+      <div id="image-container" class="image-container">
+        <div class="image-wrapper">
+          <img id="image1" src="" alt="Image 1">
+          <p id="image1-name"></p>
+        </div>
+        <div class="image-wrapper">
+          <img id="image2" src="" alt="Image 2">
+          <p id="image2-name"></p>
+        </div>
+      </div>
+      <div id="conclusion-container" class="conclusion-container" style="display: none;">
+        <h2>Test Completed, Thank you!</h2>
+        <button id="home-button">Back to Home</button>
+      </div>
+    </div>
+  </div>
+  <div id="fullscreen-overlay" class="fullscreen-overlay"></div>
+  <script src="script.js"></script>
+</body>
+</html>
