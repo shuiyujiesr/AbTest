@@ -13,7 +13,7 @@ let selectedImagePath = '';
 // Function to fetch the list of image files from the server
 async function fetchImages() {
   try {
-    const response = await fetch('/public/images');
+    const response = await fetch('/images');
     const data = await response.json();
     images.push(...data);
     displayImages();
@@ -36,16 +36,16 @@ function displayImages() {
   }
 
   if (selectedImagePosition === '') {
-    image1.src = `/public/images/${images[selectedImageIndex]}`;
+    image1.src = `images/${images[selectedImageIndex]}`;
     image1Name.textContent = getImageName(images[selectedImageIndex]);
-    image2.src = `/public/images/${images[selectedImageIndex + 1]}`;
+    image2.src = `images/${images[selectedImageIndex + 1]}`;
     image2Name.textContent = getImageName(images[selectedImageIndex + 1]);
   } else if (selectedImagePosition === 'left') {
-    image2.src = `/public/images/${images[selectedImageIndex + 1]}`;
+    image2.src = `images/${images[selectedImageIndex + 1]}`;
     image2Name.textContent = getImageName(images[selectedImageIndex + 1]);
     selectedImagePath = image1.src; // Update the path of the selected image
   } else if (selectedImagePosition === 'right') {
-    image1.src = `/public/images/${images[selectedImageIndex + 1]}`;
+    image1.src = `images/${images[selectedImageIndex + 1]}`;
     image1Name.textContent = getImageName(images[selectedImageIndex + 1]);
     selectedImagePath = image2.src; // Update the path of the selected image
   }
@@ -100,14 +100,8 @@ document.addEventListener('DOMContentLoaded', () => {
   const images = document.querySelectorAll('.image-wrapper img'); // Select all images
 
   images.forEach(img => {
-    img.addEventListener('mouseenter', () => {
-      overlay.style.opacity = '1';
-      overlay.style.visibility = 'visible'; // Instantly make it visible
-    });
-    img.addEventListener('mouseleave', () => {
-      overlay.style.opacity = '0';
-      // No need to adjust visibility back to 'hidden' if pointer-events is none
-    });
+    img.addEventListener('mouseenter', () => overlay.style.display = 'block'); // Show overlay on hover
+    img.addEventListener('mouseleave', () => overlay.style.display = 'none'); // Hide overlay when not hovering
   });
 });
 
