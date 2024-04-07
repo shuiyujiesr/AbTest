@@ -13,7 +13,7 @@ let selectedImagePath = '';
 // Function to fetch the list of image files from the server
 async function fetchImages() {
   try {
-    const response = await fetch('/public/images');
+    const response = await fetch('/images');
     const data = await response.json();
     images.push(...data);
     displayImages();
