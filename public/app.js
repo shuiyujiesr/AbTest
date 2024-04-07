@@ -26,11 +26,11 @@ function displayImages() {
     return;
   }
 
-  image1.src = `images/${images[currentIndex]}`;
+  image1.src = `/public/images/${images[currentIndex]}`;
   image1.alt = images[currentIndex];
   imageName1.textContent = images[currentIndex];
 
-  image2.src = `images/${images[currentIndex + 1]}`;
+  image2.src = `/public/images/${images[currentIndex + 1]}`;
   image2.alt = images[currentIndex + 1];
   imageName2.textContent = images[currentIndex + 1];
 }
